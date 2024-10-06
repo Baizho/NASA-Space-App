@@ -1,13 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
+
 // import Icon from 'react-native-vector-icons/Ionicons'; // For the profile icon
 
 const players = ['BEN', 'ALICE', 'RAMAZAN'];
 
 export default function TabOneScreen() {
   return (
-    <LinearGradient colors={['#CED9E7', '#44566C']} style={styles.container}>
+    <LinearGradient
+      colors={['#FFF9C4', '#B3E5FC']} // Soft light yellow and light blue
+      start={{ x: 0, y: 0.5 }}         // Start from the left (centered vertically)
+      end={{ x: 1, y: 0.5 }}
+      style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.header}>
           {/* <Icon name="person-circle-outline" size={40} color="black" /> */}
@@ -25,6 +30,7 @@ export default function TabOneScreen() {
         <TouchableOpacity style={styles.startButton}>
           <Text style={styles.startButtonText}>START THE GAME</Text>
         </TouchableOpacity>
+
       </ScrollView>
     </LinearGradient>
   );
